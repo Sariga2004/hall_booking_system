@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hall Booking Registration</title>
+</head>
+<body>
+
+<section>
+  <header>
+    <h1>Hall Booking Registration</h1>
+  </header>
+  <form action="check_availability.php" method="POST">
+    <div>
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+    </div>
+    <div>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="phoneno">Phone Number:</label>
+      <input type="tel" id="phoneno" name="phoneno" required>
+    </div>
+    <div>
+      <label for="eventdate">Event Date:</label>
+      <input type="date" id="eventdate" name="eventdate" required>
+    </div>
+    <div>
+      <label for="timing">Timing Preference:</label>
+      <select id="timing" name="timing" required>
+        <option value="fn">Forenoon</option>
+        <option value="an">Afternoon</option>
+        <option value="fullday">Full Day</option>
+      </select>
+    </div>
+    <div>
+      <label for="selectedHall">Select a hall for booking:</label>
+      <select id="selectedHall" name="selectedHall" required>
+        <option value="" disabled selected>Select Hall</option>
+        <option value="1">Hall 1</option>
+        <option value="2">Hall 2</option>
+        <option value="3">Hall 3</option>
+        <option value="4">Hall 4</option>
+      </select>
+    </div>
+    <button type="submit">Check Availability</button>
+  </form>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="registration.css">
+<title>Hall Booking</title>
+<style>
+  .select-box {
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+  <source src="background_video.mp4">
+</video>
+
+<section class="container">
+  <header>Hall Booking Form</header>
+  <form action="booking.php" method="post" class="form">
+    <div class="input-box">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter full name" name="fullname" required />
+    </div>
+
+    <div class="input-box">
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter email address" name="email" required />
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter phone number" name="phoneno" required />
+      </div>
+      <div class="input-box">
+        <label>Event Date</label>
+        <input type="datetime-local" placeholder="Enter event date" name="eventdate" id="eventdate" required/>
+      </div>
+    </div>
+
+    <div class="input-box address">
+      <label>Event Description</label>
+      <input type="text" placeholder="Enter your event name" name="eventName" required />
+      <input type="text" placeholder="Event details" name="eventDtls" required />
+      <br><br>
+      <label>Select a hall for booking</label>
+      <div class="column">
+        <div class="select-box">
+          <select name="selectedHall" id="selectedHall">
+            <option hidden>Halls</option>
+            <option>1 Convention center</option>
+            <option>2 Maharaja Auditorium</option>
+            <option>3 Conference hall</option>
+            <option>4 Seminar hall</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="specificHall" style="display: none;">
+      <label>Select specific seminar hall:</label>
+      <div class="column">
+        <div class="select-box">
+          <select name="specificHall" id="specificHallSelect">
+            <option hidden>Select</option>
+
+            <option>MBA Seminar Hall</option>
+            <option>S&H Seminar Hall</option>
+            <option>EEE Seminar Hall</option>
+            <option>E&I Seminar Hall</option>
+            <option>CSE Seminar Hall</option>
+            <option>IT Seminar Hall</option>
+            <option>FT Seminar Hall</option>
+            <option>ECE Seminar Hall</option>
+            <option>Civil Seminar Hall</option>
+            <option>MTS Seminar Hall</option>
+            <option>MECHANICAL Seminar Hall</option>
+            <option>AUTOMOBILE Seminar Hall</option>
+
+
+
+           
+        </select>
+        </div>
+      </div>
+    </div>
+    <button>Book</button>
+  </form>
+</section>
+
+<script>
+document.getElementById('selectedHall').addEventListener('change', function() {
+  var selectedHall = this.value;
+  if (selectedHall === '4 Seminar hall') {
+    document.getElementById('specificHall').style.display = 'block';
+  } else {
+    document.getElementById('specificHall').style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>

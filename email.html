@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decrypted Email</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  (function () {
+    var encodedEmail = "7801170d0a1d15191114381c1715191116561b1715";
+    var decodedEmail = "",
+      key = parseInt(encodedEmail.substr(0, 2), 16),
+      i;
+    for (i = 2; i < encodedEmail.length; i += 2) {
+      decodedEmail += String.fromCharCode(parseInt(encodedEmail.substr(i, 2), 16) ^ key);
+    }
+    document.getElementById("email").innerHTML = decodedEmail;
+  })();
+  /* ]]> */
+</script>
+
+<p>Decrypted Email Address: <span id="email"></span></p>
+
+</body>
+</html>
